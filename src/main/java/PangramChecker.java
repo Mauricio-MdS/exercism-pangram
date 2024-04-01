@@ -1,7 +1,11 @@
 public class PangramChecker {
 
     public boolean isPangram(String input) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+        for (int characterCodepoint = "a".codePointAt(0);
+             characterCodepoint <= "z".codePointAt(0);
+             characterCodepoint++)
+            if (!input.toLowerCase().contains(Character.toString(characterCodepoint))) return false;
 
+        return true;
+    }
 }
